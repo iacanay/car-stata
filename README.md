@@ -1,13 +1,13 @@
 # README #
 
-[**DOWNLOAD Rdcont PACKAGE**](https://bitbucket.org/iacanay/car-stata/get/HEAD.zip)
+[**DOWNLOAD CAR PACKAGE**](https://bitbucket.org/iacanay/car-stata/get/HEAD.zip)
 
 ### What is this repository for? ###
 
-* Stata packages car_sfe and car_sat
+* Stata package for the commands car_sfe and car_sat
 * Computes point estimates and standard errors for experiments with covariate adaptive randomization
-* car_sfe provides results for the regression with strata fixed effects
-* car_sat provides results for the saturated regression 
+* car_sfe: results for the linear regression with strata fixed effects
+* car_sat: results for the saturated linear regression 
 * Bugni, Canay, and Shaikh (2019): Inference under covariate adaptive randomization with multiple treatments. 
 
 ### Authors of the paper ###
