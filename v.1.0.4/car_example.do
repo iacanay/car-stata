@@ -22,6 +22,7 @@ tab S if sample1, matcell(ns)
 cou if sample1
 mat theta = b_sat*ns/r(N)
 mat li theta
+
 *Command
 car_sat Y A if sample1, strata(S)					// 1-treatment, SAT
 car_sat Y A if sample1, strata(S) table				// 1-treatment, SAT
@@ -34,4 +35,5 @@ gen S2 = mod(_n, 4)
 forv n = 0/3 {
 	gen S2_`n' = S2 == `n'
 }
-car_sat Y A if sample2, strata(S) covars(S2_*)
+
+car_sat Y A if sample2, strata(S) covars(S2_*)		// collinearity check
