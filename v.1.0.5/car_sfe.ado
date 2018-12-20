@@ -71,6 +71,7 @@ pr car_sfe, eclass
 			replace `touse' = 0 if `strata' == `strat' & `touse'
 		}
 	}
+	/*
 	foreach a of loc treats {
 		if `a' != 0 {
 			loc s = 0 
@@ -78,6 +79,24 @@ pr car_sfe, eclass
 				loc ++s
 				loc interaction `interaction' `I_`a'_`s''
 			}
+			loc column `column' "`A'_`a'"
+			tempvar A_`a'
+			gen `A_`a'' = `A' == `a' & `touse'
+			loc T `T' `A_`a''
+		}
+	}
+	*/
+	loc s = 0
+	foreach strat of loc groups {
+		loc ++s
+		foreach a of loc treats {
+			if `a' != 0 {
+				loc interaction `interaction' `I_`a'_`s''
+			}
+		}
+	}
+	foreach a of loc treats {
+		if `a' != 0 {
 			loc column `column' "`A'_`a'"
 			tempvar A_`a'
 			gen `A_`a'' = `A' == `a' & `touse'
@@ -153,6 +172,7 @@ mata:
 		beta 	= beta[1..as, 1]
 		B 		= colshape(beta, S)[|2,1\.,.|]
 		A 		= rows(B)
+		B		= colshape(colshape(B, A)', S)
 		T 		= B * N_s'
 		V_H 	= quadcross((B - T*I_S)', N_s, (B - T*I_S)')
 		R 		= J(A, S, 0)
