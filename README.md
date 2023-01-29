@@ -1,7 +1,5 @@
 # README #
 
-[**DOWNLOAD CAR PACKAGE**](https://bitbucket.org/iacanay/car-stata/get/HEAD.zip)
-
 ### What is this repository for? ###
 
 * Stata package for the commands car_sfe and car_sat
@@ -44,8 +42,4 @@ car_example.do
 
 ### LICENSE
 
-CAR-STATA is released under the [MIT LICENSE](https://bitbucket.org/iacanay/car-stata/raw/master/LICENSE)
-
-### Changelog 
-
-A complete version history is here: [CHANGELOG](https://bitbucket.org/iacanay/car-stata/wiki/Home)
+CAR-STATA is released under the [MIT LICENSE](https://github.com/iacanay/car-stata/blob/master/LICENSE)
